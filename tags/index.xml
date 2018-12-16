@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Oiar&#39;s Blog</title>
+    <link>https://dream-plus-posts.netlify.com/tags/</link>
+    <description>Recent content in Tags on Oiar&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Jan 2018 18:59:43 +0530</lastBuildDate>
+    
+	<atom:link href="https://dream-plus-posts.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Development</title>
+      <link>https://dream-plus-posts.netlify.com/tags/development/</link>
+      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://dream-plus-posts.netlify.com/tags/go/</link>
+      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://dream-plus-posts.netlify.com/tags/golang/</link>
+      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Code In</title>
+      <link>https://dream-plus-posts.netlify.com/tags/google-code-in/</link>
+      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/google-code-in/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://dream-plus-posts.netlify.com/tags/hugo/</link>
+      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Openwisp</title>
+      <link>https://dream-plus-posts.netlify.com/tags/openwisp/</link>
+      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/openwisp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Templates</title>
+      <link>https://dream-plus-posts.netlify.com/tags/templates/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/templates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Themes</title>
+      <link>https://dream-plus-posts.netlify.com/tags/themes/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://dream-plus-posts.netlify.com/tags/tutorials/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/tags/tutorials/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

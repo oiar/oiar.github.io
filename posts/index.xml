@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Oiar&#39;s Blog</title>
+    <link>https://dream-plus-posts.netlify.com/posts/</link>
+    <description>Recent content in Posts on Oiar&#39;s Blog</description>
+    <meta name="generator" content="Hugo 0.52" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jan 2018 10:29:23 +0530</lastBuildDate>
+    
+        <atom:link href="https://dream-plus-posts.netlify.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Code-in with OpenWISP</title>
+      <link>https://dream-plus-posts.netlify.com/posts/gci/</link>
+      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/gci/</guid>
+      <description>My experiences with Google Code-in 2017 and OpenWISP.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://dream-plus-posts.netlify.com/posts/hugoisforlovers/</link>
+      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/hugoisforlovers/</guid>
+      <description>A quick read on how to get started with Hugo.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/</guid>
+      <description>A tutorial on how to create a Hugo theme.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>https://dream-plus-posts.netlify.com/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/goisforlovers/</guid>
+      <description>An introduction to Hugo, a static site generator.</description>
+    </item>
+    
+    <item>
+      <title>Migrating from Jekyll</title>
+      <link>https://dream-plus-posts.netlify.com/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/migrate-from-jekyll/</guid>
+      <description>A tutorial on migrating from Jekyll to Hugo.</description>
+    </item>
+    
+  </channel>
+</rss>

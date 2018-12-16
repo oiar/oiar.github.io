@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Code In on Oiar&#39;s Blog</title>
+    <link>https://dream-plus-posts.netlify.com/tags/google-code-in/</link>
+    <description>Recent content in Google Code In on Oiar&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jan 2018 10:29:23 +0530</lastBuildDate>
+    
+	<atom:link href="https://dream-plus-posts.netlify.com/tags/google-code-in/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Code-in with OpenWISP</title>
+      <link>https://dream-plus-posts.netlify.com/posts/gci/</link>
+      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/gci/</guid>
+      <description>Recently I&amp;rsquo;ve been participating in Google Code-in which is Google&amp;rsquo;s initiative to introduce young minds to the concept of FOSS, that is Free or Open-Source Softwares. This post is for sharing my experiences with GCI, as the title suggests. So let&amp;rsquo;s just get on it.
+It all began while I was returning from an outing on 5 December, 2017 and was searching the internet for Google Science Fair to check if I could participate in it or not.</description>
+    </item>
+    
+  </channel>
+</rss>

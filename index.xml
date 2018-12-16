@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oiar&#39;s Blog</title>
+    <link>https://dream-plus-posts.netlify.com/</link>
+    <description>Recent content on Oiar&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Jan 2018 00:34:29 +0530</lastBuildDate>
+    
+	<atom:link href="https://dream-plus-posts.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>https://dream-plus-posts.netlify.com/cards/blog/</link>
+      <pubDate>Wed, 31 Jan 2018 00:34:29 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Code-in with OpenWISP</title>
+      <link>https://dream-plus-posts.netlify.com/posts/gci/</link>
+      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/gci/</guid>
+      <description>Recently I&amp;rsquo;ve been participating in Google Code-in which is Google&amp;rsquo;s initiative to introduce young minds to the concept of FOSS, that is Free or Open-Source Softwares. This post is for sharing my experiences with GCI, as the title suggests. So let&amp;rsquo;s just get on it.
+It all began while I was returning from an outing on 5 December, 2017 and was searching the internet for Google Science Fair to check if I could participate in it or not.</description>
+    </item>
+    
+    <item>
+      <title>Instructables</title>
+      <link>https://dream-plus-posts.netlify.com/cards/instructables/</link>
+      <pubDate>Tue, 30 Jan 2018 23:26:40 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/instructables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hackster</title>
+      <link>https://dream-plus-posts.netlify.com/cards/hackster/</link>
+      <pubDate>Tue, 30 Jan 2018 00:26:04 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/hackster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patreon</title>
+      <link>https://dream-plus-posts.netlify.com/cards/patreon/</link>
+      <pubDate>Tue, 30 Jan 2018 23:22:08 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/patreon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The ProtoElectric Effect</title>
+      <link>https://dream-plus-posts.netlify.com/cards/protoelectric/</link>
+      <pubDate>Tue, 30 Jan 2018 23:22:08 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/protoelectric/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keybase</title>
+      <link>https://dream-plus-posts.netlify.com/cards/keybase/</link>
+      <pubDate>Tue, 30 Jan 2018 23:21:51 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/keybase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My Goodwall Profile</title>
+      <link>https://dream-plus-posts.netlify.com/cards/goodwall/</link>
+      <pubDate>Sun, 08 Apr 2018 21:49:02 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/cards/goodwall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://dream-plus-posts.netlify.com/posts/hugoisforlovers/</link>
+      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>https://dream-plus-posts.netlify.com/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/goisforlovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>Migrating from Jekyll</title>
+      <link>https://dream-plus-posts.netlify.com/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/posts/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dream-plus-posts.netlify.com/404/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/404/</guid>
+      <description> Error 404: Page Not Found It seems that the page that you&amp;rsquo;re trying to access doesn&amp;rsquo;t exist. 😟 If you&amp;rsquo;re sure that it exists, chances are it might have been moved to a new link! You may search for it on the home page. </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://dream-plus-posts.netlify.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dream-plus-posts.netlify.com/about/</guid>
+      <description>So, Who Am I? 
+I’m just another teenager who likes writing, programming and making stuff. Even setting the title as Who Am I for this article is reminding me of whoami in Linux. I feel the inner urge to contribute something to the Internet because I love writing and I believe posting something online enables users all around the globe to see your work and suggest improvements.
+Recently I&amp;rsquo;ve also started taking interest in web designing and hosting the fruitful results of which these site and blogs are!</description>
+    </item>
+    
+  </channel>
+</rss>

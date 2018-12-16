@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<title>
+	Google Code-in with OpenWISP
+</title>
+		<style>
+	body {
+		display: block;
+		--colorBG: "#40e0d0, #ff8c00, #ff0080";
+		
+			background: linear-gradient(to right, var(--colorBG)) !important;
+		
+	}
+
+	body, body.pushable {
+		background-repeat: no-repeat;
+	  	background-attachment: fixed;
+	  	background-size: cover !important;
+	}
+</style>
+
+		<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+	
+	<meta name="author" content="Oiar" />
+	<meta name="description" content="My experiences with Google Code-in 2017 and OpenWISP." />
+
+
+
+<meta name="generator" content="Hugo 0.52" />
+
+
+<link rel="shortcut icon" href="/img/defaultFav.ico">
+
+
+
+
+		
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/site.css">
+
+
+
+
+
+
+	
+		<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/UtkarshVerma/hugo-dream-plus/ae11561d/exampleSite/static/css/highlight.css">
+	
+
+
+
+<style>
+	body.pushable {
+		display: block;
+		
+			background: linear-gradient(to right, var(--colorBG)) !important;
+		 ;
+	}
+</style>
+
+
+
+<script>
+	var colorBG =  true 
+	var enabledPost =  false 
+	
+	var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+	console.log("The client device is a "+(isMobile?"mobile":"PC")+".")
+</script>
+
+	</head>
+
+	<body>
+		<script>
+var prevBgIndex = 0;
+var bodyBgSwitchIndex = 0;
+
+
+	var gradients = [
+	  [],
+	  ['#40e0d0', '#ff8c00', '#ff0080'], 
+	  ['#3e5151', '#decba4'], 
+	  ['#11998e', '#38ef7d'], 
+	  ['#108dc7', '#ef8e38'], 
+	  ['#fc5c7d', '#6a82fb'], 
+	  ['#fc466b', '#3f5efb'], 
+	  ['#c94b4b', '#4b134f'], 
+	  ['#23074d', '#cc5333'] 
+	];
+	document.body.style.setProperty('--colorBG', connect(gradients[getRandomInt(0, gradients.length)]));
+
+
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  var random;
+	  while (1) {
+	    random = Math.floor(Math.random() * (max - min)) + min;
+	    if (random !== prevBgIndex) {
+	      prevBgIndex = random;
+	      break;
+	    }
+	  }
+	  return random;
+	}
+
+	function connect(arr) {
+	  var str = '';
+	  for (var i = 0; i < arr.length; i++) {
+	    if (i !== arr.length - 1) {
+	      str += arr[i] + ', ';
+	    } else {
+	      str += arr[i];
+	    }
+	  }
+	  return str;
+	}
+</script>
+
+
+
+
+		<div id="sidebar" class="ui sidebar inverted vertical menu">
+	
+	<section id="author" class="ui top attached center aligned inverted segment">
+		
+<div class="ui small circular image">
+	
+		<img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/myavatar.jpg">
+	
+</div>
+
+
+<h3 class="ui header">
+	Oiar
+	<div class="sub header">A keen maker, programmer and an Instructables author.</div>
+</h3>
+
+	</section>
+
+	
+	
+		<section class="ui attached center aligned inverted segment sidebar-dream-tags">
+			
+			
+
+
+
+
+	
+		<a class="ui label brown " href="/tags/development" title="development">development</a>
+	
+		<a class="ui label green " href="/tags/go" title="go">go</a>
+	
+		<a class="ui label orange " href="/tags/golang" title="golang">golang</a>
+	
+		<a class="ui label violet " href="/tags/google-code-in" title="google-code-in">google-code-in</a>
+	
+		<a class="ui label blue " href="/tags/hugo" title="hugo">hugo</a>
+	
+		<a class="ui label yellow " href="/tags/openwisp" title="openwisp">openwisp</a>
+	
+		<a class="ui label teal " href="/tags/templates" title="templates">templates</a>
+	
+		<a class="ui label teal " href="/tags/themes" title="themes">themes</a>
+	
+		<a class="ui label yellow " href="/tags/tutorials" title="tutorials">tutorials</a>
+	
+
+
+		</section>
+	
+
+	
+	
+		<section class="ui attached inverted segment sidebar-dream-categories both flexbox">
+			<div class="ui inverted accordion">
+				
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/blogging">blogging</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/gci/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Google Code-in with OpenWISP</p>
+				</div>
+			</a>
+		
+	</div>
+
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/development">development</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/hugoisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Getting Started with Hugo</p>
+				</div>
+			</a>
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/goisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>(Hu)go Template Primer</p>
+				</div>
+			</a>
+		
+	</div>
+
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/golang">golang</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/hugoisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Getting Started with Hugo</p>
+				</div>
+			</a>
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/goisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>(Hu)go Template Primer</p>
+				</div>
+			</a>
+		
+	</div>
+
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/tutorials">tutorials</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Creating a New Theme</p>
+				</div>
+			</a>
+		
+	</div>
+
+
+			</div>
+		</section>
+	
+
+	
+	<section id="footer" class="ui bottom attached center aligned inverted segment">
+		
+
+	<p>© 2018 Oiar&#39;s Blog</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+	</section>
+</div>
+
+
+		<div class="pusher">
+			<div class="flipper">
+				<div class="front">
+					
+	<nav class="ui top secondary menu bar">
+	
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+
+	
+	
+		<div class="item">
+			<a href="/">
+				<i class="inverted big link home icon" title="Home"></i>
+			</a>
+		</div>
+	
+
+	
+	
+		
+			<div class="item">
+				<a href="/posts">
+					<i class="inverted big link archive icon" title="Archive"></i>
+				</a>
+			</div>
+		
+	
+
+	
+	
+		<div class="item">
+			<a href="/tags">
+				<i class="inverted big link tags icon" title="All Tags"></i>
+			</a>
+		</div>
+	
+
+	
+	
+		<div class="item">
+			<a href="/categories">
+				<i class="inverted big link cubes icon" title="All Categories"></i>
+			</a>
+    	</div>
+	
+
+	
+	
+
+	
+	
+		<div class="ui container tablet computer only grid">
+			<div class="item" onClick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+				<i class="inverted big link sidebar icon" title="Show Sidebar"></i>
+			</div>
+		</div>
+	
+
+	
+	
+		<div class="item right">
+			<a href="/posts/index.xml">
+				<i class="inverted big link rss icon" title="RSS Feed"></i>
+			</a>
+		</div>
+	
+</nav>
+
+
+	<div class="ui centered grid">
+		
+		<div class="sixteen wide mobile only column">
+				<div class="ui inverted accordion">
+	<div id="header" class="ui inverted segment column box">		
+		
+		<header id="author" class="ui top attached center aligned inverted segment">
+			
+<div class="ui small circular image">
+	
+		<img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/myavatar.jpg">
+	
+</div>
+
+
+<h3 class="ui header">
+	Oiar
+	<div class="sub header">A keen maker, programmer and an Instructables author.</div>
+</h3>
+
+		</header>
+
+		
+		<div class=" title header-title">
+			
+				<div id="tag-category-pop" class="ui red right corner label">
+					<i class="hand point icon down"title="Click this to pop tags and categories"></i>
+				</div>
+			
+		</div>
+		
+		
+		<div id="tag-category" class=" content">
+			
+				<section class="ui attached center aligned inverted segment dream-tags none flexbox">
+					
+
+
+
+
+	
+		<a class="ui label orange " href="/tags/development" title="development">development</a>
+	
+		<a class="ui label blue " href="/tags/go" title="go">go</a>
+	
+		<a class="ui label pink " href="/tags/golang" title="golang">golang</a>
+	
+		<a class="ui label green " href="/tags/google-code-in" title="google-code-in">google-code-in</a>
+	
+		<a class="ui label olive " href="/tags/hugo" title="hugo">hugo</a>
+	
+		<a class="ui label pink " href="/tags/openwisp" title="openwisp">openwisp</a>
+	
+		<a class="ui label purple " href="/tags/templates" title="templates">templates</a>
+	
+		<a class="ui label yellow " href="/tags/themes" title="themes">themes</a>
+	
+		<a class="ui label violet " href="/tags/tutorials" title="tutorials">tutorials</a>
+	
+
+
+				</section>
+			
+
+			
+				<section class="ui attached inverted segment dream-categories both flexbox">
+					<div class="inverted accordion">
+						
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/blogging">blogging</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/gci/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Google Code-in with OpenWISP</p>
+				</div>
+			</a>
+		
+	</div>
+
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/development">development</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/hugoisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Getting Started with Hugo</p>
+				</div>
+			</a>
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/goisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>(Hu)go Template Primer</p>
+				</div>
+			</a>
+		
+	</div>
+
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/golang">golang</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/hugoisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Getting Started with Hugo</p>
+				</div>
+			</a>
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/goisforlovers/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>(Hu)go Template Primer</p>
+				</div>
+			</a>
+		
+	</div>
+
+	
+	<div class="title">
+		<i class="dropdown icon"></i>
+		<a class="link" href="/categories/tutorials">tutorials</a>
+	</div>
+
+	
+	<div class="content">
+		
+			<a class="item" href="https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/">
+				<div>
+					<i class="cocktail icon"></i>
+					<p>Creating a New Theme</p>
+				</div>
+			</a>
+		
+	</div>
+
+
+					</div>
+				</section>
+			
+		</div>
+
+		
+		<footer class="ui bottom attached center aligned inverted segment">
+			
+
+	<p>© 2018 Oiar&#39;s Blog</p>
+
+
+<p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with <a href="https://github.com/UtkarshVerma/hugo-dream-plus" target="_blank">Dream Plus</a> theme.</p>
+
+		</footer>
+	</div>
+</div>
+
+		</div>
+
+		<div class="sixteen wide mobile fifteen wide tablet twelve wide computer column post-list">
+			
+			<section class="ui secondary top attached black segment post-head">
+				<h1 class="post-title">
+					Google Code-in with OpenWISP
+				</h1>
+
+				<div class="sub header">
+					<div><span><i class="calendar outline icon"></i>Jan 13, 2018</span></div>
+					
+					<div><span class="disqusComment"><i class="comment outline icon"></i><a href="https://dream-plus-posts.netlify.com/posts/gci/#disqus_thread" class="disqus-comment-count" data-disqus-identifier="f12df5c909df07fdf052838cb45812cd"></a></span></div>
+					<div><span><i class="clock outline icon"></i>9 min read</span></div>
+					<div><span><i class="angle double up icon"></i>Last updated on Jan 13, 2018</span></div>
+				</div>
+				<hr>
+
+				
+					<div class="toc">
+						<nav id="TableOfContents">
+<ul>
+<li><a href="#the-things-i-ve-learnt">The Things I&rsquo;ve Learnt:</a>
+<ul>
+<li><a href="#1-linux-command-line">1. Linux Command Line</a></li>
+<li><a href="#2-git-and-github">2. git and GitHub</a></li>
+<li><a href="#3-virtual-machines">3. Virtual Machines</a></li>
+<li><a href="#4-python">4. Python</a></li>
+<li><a href="#5-web-programming">5. Web Programming</a></li>
+<li><a href="#6-css-html">6. CSS &amp; HTML</a></li>
+<li><a href="#7-creating-properly-formatted-python-and-yaml-script-files">7. Creating Properly Formatted Python and YAML Script Files</a></li>
+<li><a href="#8-markdown">8. Markdown</a></li>
+<li><a href="#9-creating-restful-apis-with-python-django">9. Creating RESTful APIs with Python &amp; Django</a></li>
+<li><a href="#10-creating-a-website">10. Creating A Website</a></li>
+</ul></li>
+<li><a href="#the-challenges-i-faced">The Challenges I Faced:</a>
+<ul>
+<li><a href="#1-ansible-openwisp2">1. ansible-openwisp2</a></li>
+<li><a href="#2-creating-a-restful-api-using-python-and-django">2. Creating a RESTful API using Python and Django</a></li>
+<li><a href="#3-vagrant">3. Vagrant</a></li>
+</ul></li>
+<li><a href="#aspects-i-didn-t-like">Aspects I didn&rsquo;t Like:</a>
+<ul>
+<li><a href="#1-scarcity-of-mentors">1. Scarcity of Mentors</a></li>
+<li><a href="#2-activity-time-slots-of-mentors">2. Activity Time Slots of Mentors</a></li>
+<li><a href="#3-not-all-mentors-appear-on-gitter">3. Not all Mentors appear on Gitter</a></li>
+</ul></li>
+<li><a href="#ending-note">Ending Note</a></li>
+</ul>
+</nav>
+					</div>
+				
+
+				<article class="post-content twemoji">
+					
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/gci-wide.png" alt="GCI" />Recently I&rsquo;ve been participating in <a href="https://codein.withgoogle.com/">Google Code-in</a> which is Google&rsquo;s initiative to introduce young minds to the concept of <strong>FOSS</strong>, that is <strong>Free or Open-Source Softwares</strong>. This post is for sharing my experiences with GCI, as the title suggests. So let&rsquo;s just get on it.</p>
+
+<p>It all began while I was returning from an outing on <strong>5 December, 2017</strong> and was searching the internet for <a href="https://www.googlesciencefair.com/">Google Science Fair</a> to check if I could participate in it or not. When I searched it and scrolled down, I saw a link for <strong>Google Code-in</strong>. The very combination of the words <em>Google</em> and <em>Code</em> had raised my adrenaline levels and so I starting reading about it and after a few moments, I had decided to participate in it. Soon I had my father fill up the <strong>Parental Consent</strong> and I was ready to begin.</p>
+
+<p>Being a total beginner with this contest and with the concepts of <strong>FOSS</strong>, I had a lot to learn, and I was aware of that. So after a few days of jumping from one organization to the other, I was finally able to settle at <a href="https://www.openwisp.org">OpenWISP</a>. This was thankfully possible due to my chat on their <a href="https://gitter.im/openwisp/general">Gitter room</a> with one of their mentors. It also gave me the confidence to proceed ahead with my skill-set and so I began doing the tasks provided by this organisation.</p>
+
+<hr />
+
+<h1 id="the-things-i-ve-learnt">The Things I&rsquo;ve Learnt:&nbsp;<a class="anchor" href="#the-things-i-ve-learnt"><i class="small linkify icon"></i></a> </h1>
+
+<p>Being a participant of GCI, I have learned a lot of things.Here are the few of the many things which I&rsquo;ve learn&rsquo;t till date, thanks to <strong>OpenWISP</strong>(I&rsquo;m still learning more 😉):</p>
+
+<h2 id="1-linux-command-line">1. Linux Command Line&nbsp;<a class="anchor" href="#1-linux-command-line"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/linux.png" alt="Screenshot of Lubntu" />
+Ever since the beginning of GCI, I&rsquo;ve been using <strong>Lubuntu</strong> for doing almost everything. Be it <strong>installing packages</strong>, <strong>setting up a virtual machine</strong>, <strong>creating a webpage</strong>, <strong>using GitHub</strong> or <strong>hosting a local server</strong>, I&rsquo;ve got so used to the quick and efficient CLI of Linux now that I&rsquo;ve developed a sort of disgust for using the mouse. I&rsquo;ve also acquired great details about popularly used <strong>shell commands</strong>.</p>
+
+<h2 id="2-git-and-github">2. git and GitHub&nbsp;<a class="anchor" href="#2-git-and-github"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/git.png" alt="Pushing commits using git" /></p>
+
+<p>GitHub is the basic need of any developer/maker who intends to share his/her work online. I&rsquo;m also very fond of the working of GitHub. It allows easy sharing, modifications and contributions to projects through the usage of <strong>clones</strong> and <strong>pull requests</strong> . Since <strong>OpenWISP</strong> is also on GitHub(which open-source organisation isn&rsquo;t nowadays? 😄), there have been a lot of tasks involving GitHub. Doing those tasks has increased my knowledge tenfold and I&rsquo;m now very comfortable with using <strong>git</strong>.</p>
+
+<h2 id="3-virtual-machines">3. Virtual Machines&nbsp;<a class="anchor" href="#3-virtual-machines"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/virtualbox.png" alt="VirtualBox running Ubuntu Server 14.04" />
+There are some times when a software isn&rsquo;t compatible with the OS you&rsquo;ve installed. In that case, it&rsquo;s a good idea to use <strong>virtual machines</strong> or <strong>VMs</strong> rather than installing a whole new OS. I already had a bit of experiences with VMs but I never went deep. While doing some tasks, I&rsquo;ve learned a few handy things to perform with VMs such as <strong>configuring the network settings</strong>, <strong>passing commands remotely using SSH</strong> and <strong>using them as disposable local webservers</strong>.</p>
+
+<h2 id="4-python">4. Python&nbsp;<a class="anchor" href="#4-python"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/virtualenv.png" alt="virtualenv Creation using Python" />
+I had been thinking about learning <strong>Python</strong> since it&rsquo;s getting more and more popular nowadays, but I could never get rid of my hesitation that &ldquo;Python a whole new language&rdquo; since I only had exposure to Java. But the tasks that <strong>OpenWISP</strong> provided in Google Code-in rid me of this hesitation of mine. Once I began reading about it, I found out how similar it is to Java and have therefore started practising it now and hope that I might be able to master it someday. I&rsquo;ve learnt how to install python modules, how to interpret error messages, and using <code>virtualenv</code> for isolated working area.</p>
+
+<h2 id="5-web-programming">5. Web Programming&nbsp;<a class="anchor" href="#5-web-programming"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/website.png" alt="The first site I created using Django" />
+Just like Python, I had the same hesitation with web programming as well. But one task in GCI removed this hesitation. That specific task required me to create my own website using <strong>Django</strong> and guess what, <strong>python!</strong> As much as I remember it took me two whole days to understand what I had to do and then I created it. If you&rsquo;re curious about that site of mine, <a href="https://utkarshverma.pythonanywhere.com">here&rsquo;s the link</a> to it. I also can&rsquo;t proceed without referencing to the tutorial <strong>OpenWISP</strong> referred to me since the authors(<a href="https://twitter.com/djangogirls">DjangoGirls</a>) have done a great job. <a href="https://tutorial.djangogirls.org">Here&rsquo;s the link!</a></p>
+
+<h2 id="6-css-html">6. CSS &amp; HTML&nbsp;<a class="anchor" href="#6-css-html"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/css-html.png" alt="Inspecting the site" />
+The same tutorial which taught <strong>Django</strong> also introduced me to the concepts of CSS. After having learn&rsquo;t a bit of CSS, I wanted to test it out. A task in GCI required me to review a <strong>pull request</strong> of another fellow GCI student. I thought of it as an opportunity and <a href="https://brainbuzzer.github.io/OpenWISP-Website/">here&rsquo;s</a> the results of my <strong>CSS &amp; HTML coding</strong>. I helped <a href="https://github.com/BrainBuzzer">@BrainBuzzer</a> in creating this website by adding some HTML pages and some other stuff. They are stated <a href="https://github.com/BrainBuzzer/OpenWISP-Website/pull/1">here</a>. By the way, the website was supposed to be a <strong>thanks to OpenWISP and mostly its mentors</strong> for their guidance.</p>
+
+<h2 id="7-creating-properly-formatted-python-and-yaml-script-files">7. Creating Properly Formatted Python and YAML Script Files&nbsp;<a class="anchor" href="#7-creating-properly-formatted-python-and-yaml-script-files"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/yaml.png" alt="A basic .yml file" />
+A few of my tasks required me to use <strong>python</strong> and <strong>YAML</strong> scripts. Since my PC is a bit outdated and it can&rsquo;t run high-end editing softwares such as <strong>Atom</strong> smoothly, I was stuck with Lubuntu&rsquo;s in-built text editor <strong>Leafpad</strong>. Initially it was a bit hard for me to format my scripts properly but after a few tries, I seem to have learnt it.</p>
+
+<h2 id="8-markdown">8. Markdown&nbsp;<a class="anchor" href="#8-markdown"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/markdown.png" alt="A basic MarkDown example" />
+GitHub uses this markup language for text formatting. Since it is used almost everywhere, from <strong>Gitter</strong> to <strong>Comments in GitHub</strong> and even in <strong>GitHub Pages</strong>, it didn&rsquo;t take me long to get acquainted with it. FYI, this post is also written using <strong>Markdown</strong> on <a href="https://dillinger.io">Dillinger</a>. The picture above shows a code snippet of Markdown.</p>
+
+<h2 id="9-creating-restful-apis-with-python-django">9. Creating RESTful APIs with Python &amp; Django&nbsp;<a class="anchor" href="#9-creating-restful-apis-with-python-django"><i class="small linkify icon"></i></a> </h2>
+
+<p><img src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/gci/restful-api.jpg" alt="RESTful API" />
+There was also a task in GCI for completion of which, I had to create a <strong>RESTful API</strong> for my local server. Finishing this task was a bit herculean since the tutorial I referred to was outdated but thanks my previous exposure to Django and Python, I was able to debug the errors and finish this task within the given time-frame. The picture below shows a RESTful API.</p>
+
+<h2 id="10-creating-a-website">10. Creating A Website&nbsp;<a class="anchor" href="#10-creating-a-website"><i class="small linkify icon"></i></a> </h2>
+
+<p>Thanks to all the things I learnt during GCI, I have now created a blog for myself and the blog I&rsquo;ve created is the one you&rsquo;re currently reading 😄. This website is hosted through <strong>GitHub Pages</strong> and the posts are written using <strong>Markdown</strong>. I&rsquo;ve also used <a href="https://travis-ci.org">Travis</a> to constantly detect my pushes, build them and push the build to the <strong>master branch</strong> of the website repository.</p>
+
+<hr />
+
+<h1 id="the-challenges-i-faced">The Challenges I Faced:&nbsp;<a class="anchor" href="#the-challenges-i-faced"><i class="small linkify icon"></i></a> </h1>
+
+<p>While doing the Google Code-in tasks, I didn&rsquo;t face any huge challenges as such. But still challenges are challenges and these are the ones I faced:</p>
+
+<h2 id="1-ansible-openwisp2">1. ansible-openwisp2&nbsp;<a class="anchor" href="#1-ansible-openwisp2"><i class="small linkify icon"></i></a> </h2>
+
+<p>In one of my tasks, I had to debug the <a href="https://github.com/openwisp/ansible-openwisp2">ansible-openwisp2</a>. The issue seemed to be caused by a python library (spatialite) on specific systems (operating systems). The repo worked on newer operating systems such as <strong>Ubuntu 16.04</strong> but failed on the older ones. Since I was very desperate to fix this bug, I had spent hours doing the testing but to no end. Lastly, a very basic fix removed the issue, and that fix was updating <strong>ansible</strong> to the latest version.</p>
+
+<h2 id="2-creating-a-restful-api-using-python-and-django">2. Creating a RESTful API using Python and Django&nbsp;<a class="anchor" href="#2-creating-a-restful-api-using-python-and-django"><i class="small linkify icon"></i></a> </h2>
+
+<p>This task was a bit time consuming due to the outdated tutorial I referred to for learning RESTful API creation. As much as I remember, I had to do several modifications of mine to get the API to work, the major ones of them being:</p>
+
+<ul>
+<li>Downgrading to <strong>good &lsquo;ol Django version 1.10</strong>.</li>
+<li>Installing the <strong>rest-framework-swagger v0.3.10</strong> django module.</li>
+<li>Installing the <strong>django-rest-framework v0.1.0</strong> django module.</li>
+<li>Adding <code>fields='__all__'</code> to the Serializers.</li>
+</ul>
+
+<p>You might think as to why I did the downgrading, which is a correct point. I did so because the skeleton django project which I was using was configured according to the <strong>older django</strong> and django evolves pretty fast, trust me.</p>
+
+<h2 id="3-vagrant">3. Vagrant&nbsp;<a class="anchor" href="#3-vagrant"><i class="small linkify icon"></i></a> </h2>
+
+<p>Vagrant is a tool which allows the easy creation of VMs and also the installation of huge projects just by running a single file named <code>Vagrantfile</code>. As I&rsquo;ve stated earlier, I have a really outdated PC. Vagrant requires <strong>VTI -x</strong> which my PC didn&rsquo;t have. This fact really set me back big-time. Luckily I was able to do one Vagrant task using my college-returned brother&rsquo;s laptop, but wasn&rsquo;t able to do any other Vagrant tasks afterwards since he had returned to his college.
+I also tried searching for a way to use Vagrant without this feature but had no success. That&rsquo;s why I had to leave a few Vagrant tasks. I also wanted to contribute to a repository by creating a <code>Vagrantfile</code> for it, but I was unable to do so since I wasn&rsquo;t able to run Vagrant.</p>
+
+<hr />
+
+<h1 id="aspects-i-didn-t-like">Aspects I didn&rsquo;t Like:&nbsp;<a class="anchor" href="#aspects-i-didn-t-like"><i class="small linkify icon"></i></a> </h1>
+
+<p>There <strong>aren&rsquo;t</strong> really any aspects about GCI or OpenWISP that I don&rsquo;t like. However I do have a few suggestions for <strong>OpenWISP</strong>:</p>
+
+<h2 id="1-scarcity-of-mentors">1. Scarcity of Mentors&nbsp;<a class="anchor" href="#1-scarcity-of-mentors"><i class="small linkify icon"></i></a> </h2>
+
+<p>I feel that there&rsquo;s a scarcity of mentors in OpenWISP, and it&rsquo;s a huge setback. It causes <strong>task reviewing delays</strong>. This is also very burdening for the mentors who have the responsibility of reviewing the tasks</p>
+
+<h2 id="2-activity-time-slots-of-mentors">2. Activity Time Slots of Mentors&nbsp;<a class="anchor" href="#2-activity-time-slots-of-mentors"><i class="small linkify icon"></i></a> </h2>
+
+<p>This suggestion actually supplements the above one in a way. Since most of the mentors belong to the same continent, therefore they are active only during one part of the day. This causes issues for someone in an incompatible time zone since he/she has to <strong>break his/her daily routine</strong> to reach the mentors.</p>
+
+<h2 id="3-not-all-mentors-appear-on-gitter">3. Not all Mentors appear on Gitter&nbsp;<a class="anchor" href="#3-not-all-mentors-appear-on-gitter"><i class="small linkify icon"></i></a> </h2>
+
+<p>I&rsquo;ve noticed that not all mentors appear on Gitter to answer the queries of the participants, which isn&rsquo;t a good sign. So increasing mentor participations in the discussion platforms(such as Gitter) would be a good start.</p>
+
+<hr />
+
+<h1 id="ending-note">Ending Note&nbsp;<a class="anchor" href="#ending-note"><i class="small linkify icon"></i></a> </h1>
+
+<p>Phew, I didn&rsquo;t think that my write-up would be this huge, looks like I still have a long way to go as a writer.
+Anyways, I just wanted to say that I&rsquo;m really, <strong>whole-heartedly</strong> thankful to <strong>Google Code-in</strong> as well as <strong>OpenWISP</strong> for increasing my skill-set significantly. I never would&rsquo;ve thought that I&rsquo;d be able to learn python, host <strong>my own</strong> website and all the stuff which I&rsquo;ve learnt in these <strong>challenging yet fun</strong>  forty days.
+I really appreciate the guidance <strong>OpenWISP</strong> provided since I was a mere beginner at everything when I had planned to enter <strong>Google Code-in</strong>, but now I&rsquo;ve leveled up 😄. I&rsquo;ve also made some great friends along the way with whom I love discussing programming-related stuff.
+I really hope that one day I&rsquo;ll be able to improve my skills to that extent at which I&rsquo;ll be able to contribute to OpenWISP <strong>as a mentor</strong>.</p>
+
+<p>That&rsquo;s all that I have to to say. Actually, no 😉 ! I&rsquo;d like to share a quote before that:</p>
+
+<blockquote>
+<p>Everything seems difficult until and unless you give it a try.</p>
+</blockquote>
+
+				</article>				
+			</section>
+
+			
+			<section class="ui secondary attached segment dream-tags">
+				
+					
+
+
+
+
+	
+
+
+				
+			</section>
+
+			
+			
+				<section class="ui secondary  attached segment share row box">
+					
+
+
+
+
+
+
+
+
+<div class="author">
+	
+	<img class="avatar" src="https://raw.githubusercontent.com/UtkarshVerma/blog/source/static/images/myavatar.jpg">
+	
+</div>
+<div class="info grow flexbox">
+	
+	<p class="name">Oiar</p>
+	
+	<p class="desc">A keen maker, programmer and an Instructables author.</p>
+</div>
+
+
+<section class="buttons row box">
+	<div class="facebook none flexbox" href="#" onclick="window.open(
+			'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+			'facebook-share-dialog',
+			'width=626,height=436'); return false;">
+		<button class="ui facebook button"><i class="facebook icon"></i>Share</button>
+	</div>
+	<div class="twitter none flexbox" onclick="window.open('https://twitter.com/intent/tweet?text=Read &quot;Google Code-in with OpenWISP  https:\/\/dream-plus-posts.netlify.com\/posts\/gci\/','_self')">
+		<button class="ui twitter button"><i class="twitter icon"></i>Tweet</button>
+	</div>
+</section>
+
+				</section>
+				<section class="ui secondary attached segment copyright">
+					
+
+				</section>
+			
+
+			
+			
+				<div class="ui secondary bottom attached stacked segment disqus">
+					
+<div id="disqus_thread"></div>
+<script>
+	var disqus_config = function () {
+		this.page.url = 'https:\/\/dream-plus-posts.netlify.com\/posts\/gci\/';
+		this.page.identifier = 'f12df5c909df07fdf052838cb45812cd';
+	};
+	(function() {
+   	var d = document, s = d.createElement('script');
+   	s.src = 'https://' + 'dream-plus' + '.disqus.com/embed.js';
+   	s.setAttribute('data-timestamp', +new Date());
+   	(d.head || d.body).appendChild(s);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</div>
+			
+		</div>
+	</div>
+
+				</div>
+				<div class="back">
+					
+<nav class="ui top secondary menu bar">
+	<div class="item">
+		<i class="inverted big link bullseye icon dream-flip-toggle" title="About Me"></i>
+	</div>
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<div class="item">
+				<a href="https://github.com/oiar" target="	_blank">
+					<i id="ico" class="inverted big link github icon" title="GitHub"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+			<div class="item">
+				<a href="mailto:snowoiar@gmail.com" target="	_blank">
+					<i id="ico" class="inverted big link mail icon" title="Email"></i>
+				</a>
+			</div>
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+</nav>
+
+
+
+<div class="ui centered grid about">
+	<div class="sixteen wide mobile fifteen wide tablet fifteen wide computer column about">
+		<section class="ui stacked segments">
+			<div class="ui inverted segment">
+				<article class="twemoji">
+					<h1>So, Who Am I?</h1>
+
+<hr />
+
+<p><br>
+I’m just another teenager who likes <strong>writing</strong>, <strong>programming</strong> and <strong>making stuff</strong>. Even setting the title as <strong>Who Am I</strong>  for this article is reminding me of <code>whoami</code> in Linux. I feel the inner urge to contribute something to the Internet because I love writing and I believe posting something online enables users all around the globe to see your work and suggest improvements.</p>
+
+<p>Recently I&rsquo;ve also started taking interest in web designing and hosting the fruitful results of which these site and blogs are! I also make <strong>projects</strong> and share them online at <strong>Instructables</strong>, the link of which has been placed on the home page. Making stuff is just one of the things I love the most.</p>
+
+<p>That’s all that I can think of right now. Hopefully I’ll add something more to this later on. 😅</p>
+
+<p>Curious about me? Use the social links above to check out my profiles.</p>
+
+<p>You can also support me on <a href="https://patreon.com/UtkarshVerma" target="_blank">Patreon</a>. I&rsquo;d really appreciate it.</p>
+
+				</article>
+				
+				
+			</div>
+		</section>
+	</div>
+</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+
+<script src="/js/site.js"></script>
+
+<script src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.6"></script>
+
+
+
+
+
+
+
+	<script id="dsq-count-scr" src="//dream-plus.disqus.com/count.js" async></script>
+
+
+
+
+
+		
+
+
+		
+
+	<script>
+		(function () {
+		  console.log("Twemoji up and making stuff colourful!");
+		  for (var b = document.getElementsByClassName("twemoji"), a = 0; a < b.length; a++) {
+			twemoji.parse(b[a]);
+		  }
+		})();
+	</script>
+
+
+	</body>
+</html>
