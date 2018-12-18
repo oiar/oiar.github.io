@@ -1,152 +1,136 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Oiar&#39;s Blog</title>
-    <link>https://dream-plus-posts.netlify.com/</link>
-    <description>Recent content on Oiar&#39;s Blog</description>
+    <title>Orianna</title>
+    <link>https://example.com/</link>
+    <description>Recent content on Orianna</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 31 Jan 2018 00:34:29 +0530</lastBuildDate>
+    <language>zn-Hans</language>
+    <lastBuildDate>Sat, 18 Aug 2018 20:14:59 +0800</lastBuildDate>
     
-	<atom:link href="https://dream-plus-posts.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Blog</title>
-      <link>https://dream-plus-posts.netlify.com/cards/blog/</link>
-      <pubDate>Wed, 31 Jan 2018 00:34:29 +0530</pubDate>
+      <title>Blog养成记(14) 让同页滚动更平滑</title>
+      <link>https://example.com/blog/2018-08/blog%E5%85%BB%E6%88%90%E8%AE%B014-%E8%AE%A9%E5%90%8C%E9%A1%B5%E6%BB%9A%E5%8A%A8%E6%9B%B4%E5%B9%B3%E6%BB%91/</link>
+      <pubDate>Sat, 18 Aug 2018 20:14:59 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/blog/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-08/blog%E5%85%BB%E6%88%90%E8%AE%B014-%E8%AE%A9%E5%90%8C%E9%A1%B5%E6%BB%9A%E5%8A%A8%E6%9B%B4%E5%B9%B3%E6%BB%91/</guid>
+      <description>&lt;p&gt;上一期说到增加toc侧边栏，但是直接跳转非常突兀，因此特地找了让同页跳转滚动更平滑的插件。
+&amp;lt;code&amp;gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;配置smooth-scroll插件&#34;&gt;配置smooth-scroll插件&lt;/h2&gt;
+
+&lt;p&gt;首先&lt;a href=&#34;https://github.com/kswedberg/jquery-smooth-scroll/releases&#34;&gt;下载smooth-scroll插件&lt;/a&gt;，将其中&lt;code&gt;jquery.smooth-scroll.js&lt;/code&gt;放入&lt;code&gt;js&lt;/code&gt;文件夹中。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Google Code-in with OpenWISP</title>
-      <link>https://dream-plus-posts.netlify.com/posts/gci/</link>
-      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      <title>Blog养成记(11) 给网站加个小icon</title>
+      <link>https://example.com/blog/2018-08/blog%E5%85%BB%E6%88%90%E8%AE%B011-%E7%BB%99%E7%BD%91%E7%AB%99%E5%8A%A0%E4%B8%AA%E5%B0%8Ficon/</link>
+      <pubDate>Mon, 13 Aug 2018 00:14:19 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/posts/gci/</guid>
-      <description>Recently I&amp;rsquo;ve been participating in Google Code-in which is Google&amp;rsquo;s initiative to introduce young minds to the concept of FOSS, that is Free or Open-Source Softwares. This post is for sharing my experiences with GCI, as the title suggests. So let&amp;rsquo;s just get on it.
-It all began while I was returning from an outing on 5 December, 2017 and was searching the internet for Google Science Fair to check if I could participate in it or not.</description>
+      <guid>https://example.com/blog/2018-08/blog%E5%85%BB%E6%88%90%E8%AE%B011-%E7%BB%99%E7%BD%91%E7%AB%99%E5%8A%A0%E4%B8%AA%E5%B0%8Ficon/</guid>
+      <description>这部分其实很简单，只需要在index.html的&amp;lt;head&amp;gt;部分增加以下一句话就好： &amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; href=&amp;quot;/img/aviconfile.ico&amp;quot; &amp;gt; 不过，既然是要做主题，肯定是要用模板变量的么。因此，在模板中的增加以下内容： &amp;lt;!-- Icon --&amp;gt; &amp;lt;link rel=&amp;quot;shortcut icon&amp;quot; {{ if .Site.Params.faviconfile }} href=&amp;quot;/{{ .Site.Params.faviconfile }}&amp;quot; {{ else if.Site.Params.avatar}} href=&amp;quot;/{{ .Site.Params.avatar }}&amp;quot; {{ end }} &amp;gt; 其中faviconfile是在config.toml中定义的网站图标的路径，avatar是在其中定义的个人头像照片的路径。这句话就是如果定义了网站图标就使用网站图标，如果不</description>
     </item>
     
     <item>
-      <title>Instructables</title>
-      <link>https://dream-plus-posts.netlify.com/cards/instructables/</link>
-      <pubDate>Tue, 30 Jan 2018 23:26:40 +0530</pubDate>
+      <title>音乐剧《Cat》repo</title>
+      <link>https://example.com/blog/2018-08/%E9%9F%B3%E4%B9%90%E5%89%A7catrepo/</link>
+      <pubDate>Sun, 12 Aug 2018 23:03:12 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/instructables/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-08/%E9%9F%B3%E4%B9%90%E5%89%A7catrepo/</guid>
+      <description>观剧档案 剧名：音乐剧《Cat》 观剧地点：上海大剧院 观剧时间：2018年8月1日 19:30 观剧位置：8排1座 题外话 看着时间还算早，想买个大鸡排，结果来福士地下一楼的豪大大没了，逛了一圈不知道吃什么，想要还能接受且速度快的，纠结良久决定肯德基。来到肯德基手机下单一个老北京，然后就后悔了，肯德基里等的人人山人海，等了快15min还早着的时候，我纠结了一下，天大地大，看戏最大，于是放弃鸡肉卷直奔大剧院。 Repo 位置 大剧</description>
     </item>
     
     <item>
-      <title>Hackster</title>
-      <link>https://dream-plus-posts.netlify.com/cards/hackster/</link>
-      <pubDate>Tue, 30 Jan 2018 00:26:04 +0530</pubDate>
+      <title>前端试水(2) 使用docker镜像的Sass配置</title>
+      <link>https://example.com/blog/2018-08/%E5%89%8D%E7%AB%AF%E8%AF%95%E6%B0%B42-%E4%BD%BF%E7%94%A8docker%E9%95%9C%E5%83%8F%E7%9A%84sass%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 02 Aug 2018 15:49:22 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/hackster/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-08/%E5%89%8D%E7%AB%AF%E8%AF%95%E6%B0%B42-%E4%BD%BF%E7%94%A8docker%E9%95%9C%E5%83%8F%E7%9A%84sass%E9%85%8D%E7%BD%AE/</guid>
+      <description>前言 半年前，由于终于将博客主题初版设计出来准备开始实施，在less和sass中纠结良久选择了sass。为了保持环境纯净性，想用docker装sass，用node-sass，试了几次中间都失败，无奈放弃。几乎半年后的今天，莫名又开始有搭建网页的欲望，于是又开始折腾。不过这次运气不错，终于折腾成功。 Sass是什么 Sass 是一个 css的预编译器。它在css语法的基础上，引入了更多的变量、规则等功能，可以帮助c</description>
     </item>
     
     <item>
-      <title>Patreon</title>
-      <link>https://dream-plus-posts.netlify.com/cards/patreon/</link>
-      <pubDate>Tue, 30 Jan 2018 23:22:08 +0530</pubDate>
+      <title>前端试水(1) 前端技术路线</title>
+      <link>https://example.com/blog/2018-08/%E5%89%8D%E7%AB%AF%E8%AF%95%E6%B0%B41-%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Wed, 01 Aug 2018 10:23:48 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/patreon/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-08/%E5%89%8D%E7%AB%AF%E8%AF%95%E6%B0%B41-%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF/</guid>
+      <description>前言 对于前端的了解欲望实际上是从想对博客主题进行修改开始的。但是前端这部分一直对我来说是个谜，虽然这些名词都能搜索到，但一直傻傻的不得其门而入。总算在一年后的今天，尽管还有很多地方暂时是迷雾状态，但貌似略了解一点前端的整体框架。现在算是开了新的一个系列，在此算是记录一下我了解的前端的技术路线，如果那些和我一样的前端小白们能通过这个也大概了解一点到底现在需要学的、用的是什么，就再好不过了。 对了，先声</description>
     </item>
     
     <item>
-      <title>The ProtoElectric Effect</title>
-      <link>https://dream-plus-posts.netlify.com/cards/protoelectric/</link>
-      <pubDate>Tue, 30 Jan 2018 23:22:08 +0530</pubDate>
+      <title>中文版音乐剧《长腿叔叔》repo</title>
+      <link>https://example.com/blog/2018-05/%E4%B8%AD%E6%96%87%E7%89%88%E9%9F%B3%E4%B9%90%E5%89%A7%E9%95%BF%E8%85%BF%E5%8F%94%E5%8F%94repo/</link>
+      <pubDate>Sat, 26 May 2018 16:37:59 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/protoelectric/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-05/%E4%B8%AD%E6%96%87%E7%89%88%E9%9F%B3%E4%B9%90%E5%89%A7%E9%95%BF%E8%85%BF%E5%8F%94%E5%8F%94repo/</guid>
+      <description>观剧档案 剧名：中文版音乐剧《长腿叔叔》 出品方：聚橙 观剧地点：上海兰心大戏院 观剧时间：2018年5月25日 19:30 观剧位置：12排18座 杰维斯：丁辉 乔若莎：陈希琰 碎碎念… 好友说有中文版音乐剧《长腿叔叔》的票，问何时想看可以和她说。Jade已经上周去看过，所以就带着同事和老妈周五走起了。周四天还不错，周五就开始下大雨……有些可惜，好在就只有在散场时下了大雨，等出了地铁雨也停了。 Repo 位置 兰心不大，所以12排就已</description>
     </item>
     
     <item>
-      <title>Keybase</title>
-      <link>https://dream-plus-posts.netlify.com/cards/keybase/</link>
-      <pubDate>Tue, 30 Jan 2018 23:21:51 +0530</pubDate>
+      <title>爱尔兰踢踏舞《王者之舞∙危险游戏》</title>
+      <link>https://example.com/blog/2018-05/%E7%88%B1%E5%B0%94%E5%85%B0%E8%B8%A2%E8%B8%8F%E8%88%9E%E7%8E%8B%E8%80%85%E4%B9%8B%E8%88%9E%E5%8D%B1%E9%99%A9%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Thu, 24 May 2018 20:22:13 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/keybase/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-05/%E7%88%B1%E5%B0%94%E5%85%B0%E8%B8%A2%E8%B8%8F%E8%88%9E%E7%8E%8B%E8%80%85%E4%B9%8B%E8%88%9E%E5%8D%B1%E9%99%A9%E6%B8%B8%E6%88%8F/</guid>
+      <description>&lt;h2 id=&#34;观剧档案&#34;&gt;观剧档案&lt;/h2&gt;
+
+&lt;p&gt;剧名：爱尔兰踢踏舞《王者之舞∙危险游戏》&lt;/p&gt;
+
+&lt;p&gt;观剧地点：上海文化广场&lt;/p&gt;
+
+&lt;p&gt;观剧时间：2018年5月4日 19:30&lt;/p&gt;
+
+&lt;p&gt;观剧位置：4排11座&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>My Goodwall Profile</title>
-      <link>https://dream-plus-posts.netlify.com/cards/goodwall/</link>
-      <pubDate>Sun, 08 Apr 2018 21:49:02 +0530</pubDate>
+      <title>现实与幻想的距离——观《深夜小狗离奇事件》repo&amp;感想</title>
+      <link>https://example.com/blog/2018-05/%E7%8E%B0%E5%AE%9E%E4%B8%8E%E5%B9%BB%E6%83%B3%E7%9A%84%E8%B7%9D%E7%A6%BB%E8%A7%82%E6%B7%B1%E5%A4%9C%E5%B0%8F%E7%8B%97%E7%A6%BB%E5%A5%87%E4%BA%8B%E4%BB%B6repo%E6%84%9F%E6%83%B3/</link>
+      <pubDate>Thu, 24 May 2018 10:17:35 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/cards/goodwall/</guid>
-      <description></description>
+      <guid>https://example.com/blog/2018-05/%E7%8E%B0%E5%AE%9E%E4%B8%8E%E5%B9%BB%E6%83%B3%E7%9A%84%E8%B7%9D%E7%A6%BB%E8%A7%82%E6%B7%B1%E5%A4%9C%E5%B0%8F%E7%8B%97%E7%A6%BB%E5%A5%87%E4%BA%8B%E4%BB%B6repo%E6%84%9F%E6%83%B3/</guid>
+      <description>前半段絮絮叨，中间段夹个repo，最后才是主题写的感想。 观剧档案 剧名：话剧《深夜小狗离奇事件》 剧团：英国国家剧院 National Theatre 国际巡演 观剧地点：上海文化广场 观剧时间：2018年5月16日 19:30 观剧位置：4排9座 听说《小狗》要来了…… 第一次知道《深夜小狗离奇事件 (The Curious Incident of the Dog in the Night-time)》是2013那年去纽约，在Broadway看了几场音乐剧，依稀记得在大街上见过《小狗》的宣传。之后回来了解到《小狗》</description>
     </item>
     
     <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://dream-plus-posts.netlify.com/posts/hugoisforlovers/</link>
-      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      <title>Blog养成记(7) Hugo多级列表无法显示? —— Markdown的bug合集</title>
+      <link>https://example.com/blog/2018-03/blog%E5%85%BB%E6%88%90%E8%AE%B07-hugo%E5%A4%9A%E7%BA%A7%E5%88%97%E8%A1%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA-markdown%E7%9A%84bug%E5%90%88%E9%9B%86/</link>
+      <pubDate>Tue, 20 Mar 2018 16:46:17 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/posts/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+      <guid>https://example.com/blog/2018-03/blog%E5%85%BB%E6%88%90%E8%AE%B07-hugo%E5%A4%9A%E7%BA%A7%E5%88%97%E8%A1%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA-markdown%E7%9A%84bug%E5%90%88%E9%9B%86/</guid>
+      <description>前言 又一次开始折腾Markdown了，不过这一次是因为好好的md文件，在typora中显示的好好的，但在Hugo渲染后格式就不对了，引起我这次探究主要问题在多级列表。考虑到毕竟两个软件的markdown渲染引擎不同，我并没有用到很特别的语法。之前在引用上也碰到了问题，typora中能很好地识别我想要的引用段落，但是Hugo不行。所以这次探究下是哪里出了问题，以及对应的解决方案。 既然已经提到了mar</description>
     </item>
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Mac小白探索记(2) Finder设置</title>
+      <link>https://example.com/blog/2018-01/mac%E5%B0%8F%E7%99%BD%E6%8E%A2%E7%B4%A2%E8%AE%B02-finder%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Tue, 30 Jan 2018 20:21:13 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/posts/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>https://example.com/blog/2018-01/mac%E5%B0%8F%E7%99%BD%E6%8E%A2%E7%B4%A2%E8%AE%B02-finder%E8%AE%BE%E7%BD%AE/</guid>
+      <description>Finder是mac的资源管理器，它的使用和配置与Windows区别还是挺多。习惯了Windows的使用使得Finder使用总觉得有些不便。配置好Finder能很大幅度提高我们的工作效率。 我会从遇到的问题着手，查找可以解决问题提高效率的解决方案。 Finder显示设置 显示隐藏文件夹 Mac系统Finder中的 /usr、/etc等文件夹都是隐藏文件，如果不进行设置用户是无法见到的。估计是因为mac用户并</description>
     </item>
     
     <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://dream-plus-posts.netlify.com/posts/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Mac小白探索记(1) 基本设置与常用软件</title>
+      <link>https://example.com/blog/2018-01/mac%E5%B0%8F%E7%99%BD%E6%8E%A2%E7%B4%A2%E8%AE%B01-%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE%E4%B8%8E%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Tue, 30 Jan 2018 15:04:48 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/posts/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
+      <guid>https://example.com/blog/2018-01/mac%E5%B0%8F%E7%99%BD%E6%8E%A2%E7%B4%A2%E8%AE%B01-%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE%E4%B8%8E%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <description>序 原本打算将所有相关内容只写在一篇博文里，但后面发现越加越多，内容越来越零散，最后决定进行拆分，也变为一个系列。我是2017年底才刚开始深入使用mac，算是mac小白一枚，在探索的过程中想将一些我觉得高效实用的信息记录下来，希望其他和我一样刚开始学习mac的小伙伴们能看了后有所帮助。 第一篇主要介绍新入手mac后的基本设置与常用软件安装。终于转到有terminal的电脑上了，既然换了Mac OS，需要</description>
     </item>
     
     <item>
-      <title>Migrating from Jekyll</title>
-      <link>https://dream-plus-posts.netlify.com/posts/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      <title>Moment Test</title>
+      <link>https://example.com/moment/test/</link>
+      <pubDate>Wed, 19 Aug 2015 20:29:37 -0700</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/posts/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://dream-plus-posts.netlify.com/404/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dream-plus-posts.netlify.com/404/</guid>
-      <description> Error 404: Page Not Found It seems that the page that you&amp;rsquo;re trying to access doesn&amp;rsquo;t exist. 😟 If you&amp;rsquo;re sure that it exists, chances are it might have been moved to a new link! You may search for it on the home page. </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://dream-plus-posts.netlify.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://dream-plus-posts.netlify.com/about/</guid>
-      <description>So, Who Am I? 
-I’m just another teenager who likes writing, programming and making stuff. Even setting the title as Who Am I for this article is reminding me of whoami in Linux. I feel the inner urge to contribute something to the Internet because I love writing and I believe posting something online enables users all around the globe to see your work and suggest improvements.
-Recently I&amp;rsquo;ve also started taking interest in web designing and hosting the fruitful results of which these site and blogs are!</description>
+      <guid>https://example.com/moment/test/</guid>
+      <description>The Hitchhiker&amp;rsquo;s Guide to the Galaxy is a comedy science fiction series created by Douglas Adams. Originally a radio comedy broadcast on BBC Radio 4 in 1978, it was later adapted to other formats, and over several years it gradually became an international multi-media phenomenon. Adaptations have included stage shows, a &amp;ldquo;trilogy&amp;rdquo; of five books published between 1979 and 1992, a sixth novel penned by Eoin Colfer in 2009, a 1981 TV series, a 1984 computer game, and three series of three-part comic book adaptations of the first three novels published by DC Comics between 1993 and 1996. There were also two series of towels, produced by Beer-Davies, that are considered by some fans to be an &amp;ldquo;official version&amp;rdquo; of The Hitchhiker&amp;rsquo;s Guide to the Galaxy, as they include text from the first novel.
+Movie A Hollywood-funded film version, produced and filmed in the UK, was released in April 2005, and radio adaptations of the third, fourth, and fifth novels were broadcast from 2004 to 2005. Adams did many of these adaptations, including the novels, the TV series, the computer game, and the earliest drafts of the Hollywood film’s screenplay, and some of the stage shows introduced new material written by Adams.</description>
     </item>
     
   </channel>

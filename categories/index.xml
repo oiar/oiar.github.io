@@ -1,49 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Oiar&#39;s Blog</title>
-    <link>https://dream-plus-posts.netlify.com/categories/</link>
-    <description>Recent content in Categories on Oiar&#39;s Blog</description>
+    <title>Categories on Orianna</title>
+    <link>https://example.com/categories/</link>
+    <description>Recent content in Categories on Orianna</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jan 2018 10:29:23 +0530</lastBuildDate>
+    <language>zn-Hans</language>
     
-	<atom:link href="https://dream-plus-posts.netlify.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Blogging</title>
-      <link>https://dream-plus-posts.netlify.com/categories/blogging/</link>
-      <pubDate>Sat, 13 Jan 2018 10:29:23 +0530</pubDate>
+      <title>Test</title>
+      <link>https://example.com/categories/test/</link>
+      <pubDate>Wed, 19 Aug 2015 20:29:37 -0700</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/categories/blogging/</guid>
+      <guid>https://example.com/categories/test/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Development</title>
-      <link>https://dream-plus-posts.netlify.com/categories/development/</link>
-      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      <title>品鉴评论</title>
+      <link>https://example.com/categories/%E5%93%81%E9%89%B4%E8%AF%84%E8%AE%BA/</link>
+      <pubDate>Sun, 12 Aug 2018 23:03:12 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/categories/development/</guid>
+      <guid>https://example.com/categories/%E5%93%81%E9%89%B4%E8%AF%84%E8%AE%BA/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://dream-plus-posts.netlify.com/categories/golang/</link>
-      <pubDate>Sun, 28 Jan 2018 18:59:43 +0530</pubDate>
+      <title>杂技浅尝</title>
+      <link>https://example.com/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</link>
+      <pubDate>Sat, 18 Aug 2018 20:14:59 +0800</pubDate>
       
-      <guid>https://dream-plus-posts.netlify.com/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tutorials</title>
-      <link>https://dream-plus-posts.netlify.com/categories/tutorials/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://dream-plus-posts.netlify.com/categories/tutorials/</guid>
+      <guid>https://example.com/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</guid>
       <description></description>
     </item>
     
