@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Oiar">
+  <meta name="description" content="同步与异步 Action 发出以后，Reducer 立即算出 State，叫做同步；Action 发出以后，过一段时间再执行 Reducer，就是异步。 怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。 中间件（middleware） applyMiddlewares() 方法是 Redux 的原生方法，作用是将所有中间件组成一个数组，依次执行。下面是它的源码。 export default function applyMiddleware(...middlewares) { return (createStore) =&gt; (reducer, preloadedState, enhancer) =&gt; { var store = createStore(reducer, preloadedState, enhancer); var dispatch = store.dispatch; var chain = []; var middlewareAPI = { getState: store.getState, dispatch: (action)">
+  
+  <meta property="og:title" content="React-redux(2) 摘要" />
+<meta property="og:description" content="同步与异步 Action 发出以后，Reducer 立即算出 State，叫做同步；Action 发出以后，过一段时间再执行 Reducer，就是异步。 怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。 中间件（middleware） applyMiddlewares() 方法是 Redux 的原生方法，作用是将所有中间件组成一个数组，依次执行。下面是它的源码。 export default function applyMiddleware(...middlewares) { return (createStore) =&gt; (reducer, preloadedState, enhancer) =&gt; { var store = createStore(reducer, preloadedState, enhancer); var dispatch = store.dispatch; var chain = []; var middlewareAPI = { getState: store.getState, dispatch: (action)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2019-03/react-redux2-%E6%91%98%E8%A6%81/" /><meta property="article:published_time" content="2019-03-14T21:20:45&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-14T21:20:45&#43;08:00"/><meta property="og:see_also" content="/blog/2019-03/react-redux3-%E6%91%98%E8%A6%81/" /><meta property="og:see_also" content="/blog/2019-03/react-redux1-%E6%91%98%E8%A6%81/" />
+
+
+
+  <title>
+  
+       React-redux(2) 摘要 | Oiar 
+  
+  </title>
+
+  <link rel="canonical" href="/blog/2019-03/react-redux2-%E6%91%98%E8%A6%81/">
+
+  
+  
+
+  
+  <link href="/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://illust8.com/wp-content/uploads/2018/10/winter_snow_illust_1799.png"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="/">
+          
+        <img class="avatar" src="https://illust8.com/wp-content/uploads/2018/10/winter_snow_illust_1799.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Oiar</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="/moment/" >Moment  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="/">
+          
+            <img class="pull-right avatar avatar-md" src="https://www.artres.com/Doc/ART/Media/TR3/S/K/C/L/ART138918.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Oiar</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/oiar" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+              <a href="//linkedin.com/in/you" target="_blank" rel="noopener"><i class="fab fa-linkedin pr-1" aria-hidden="true"></i></a>
+            
+
+            
+              <a href="//facebook.com/you" target="_blank" rel="noopener"><i class="fab fa-facebook pr-1" aria-hidden="true"></i></a>
+            
+
+            
+            <a href="//google.com/you" target="_blank" rel="noopener"><i class="fab fa-google-plus pr-1" aria-hidden="true"></i></a>
+            
+
+            
+                <a href="//twitter.com/you" target="_blank" rel="noopener"><i class="fab fa-twitter pr-1" aria-hidden="true"></i></a>
+            
+
+            
+                <a href="//instagram.com/you" target="_blank" rel="noopener"><i class="fab fa-instagram pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+                <a href="//px500" target="_blank" rel="noopener"><i class="fab fa-500px pr-1" aria-hidden="true"></i></a>
+            
+    
+        
+            
+                <a href="mailto:snowoiar@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="/categories/react"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> react </a></li>
+      
+    
+    
+      
+        <li><a href="/series/react"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>react</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">React-redux(2) 摘要</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Mar 14, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>2 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h2 id="同步与异步">同步与异步</h2>
+
+<p>Action 发出以后，Reducer 立即算出 State，叫做同步；Action 发出以后，过一段时间再执行 Reducer，就是异步。
+怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。</p>
+
+<h2 id="中间件-middleware">中间件（middleware）</h2>
+
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016092002.jpg" alt="" /></p>
+
+<p>applyMiddlewares() 方法是 Redux 的原生方法，作用是将所有中间件组成一个数组，依次执行。下面是它的源码。</p>
+
+<pre><code class="language-javascript">
+export default function applyMiddleware(...middlewares) {
+  return (createStore) =&gt; (reducer, preloadedState, enhancer) =&gt; {
+    var store = createStore(reducer, preloadedState, enhancer);
+    var dispatch = store.dispatch;
+    var chain = [];
+
+    var middlewareAPI = {
+      getState: store.getState,
+      dispatch: (action) =&gt; dispatch(action)
+    };
+    chain = middlewares.map(middleware =&gt; middleware(middlewareAPI));
+    dispatch = compose(...chain)(store.dispatch);
+
+    return {...store, dispatch}
+  }
+}
+
+</code></pre>
+
+<p>上面代码中，所有中间件被放进了一个数组 chain，然后嵌套执行，最后执行 store.dispatch。可以看到，中间件内部（middlewareAPI）可以拿到 getState 和 dispatch 这两个方法。</p>
+
+<h2 id="异步操作">异步操作</h2>
+
+<p>同步操作只要发出一种 Action 即可，异步操作的差别是它要发出三种 Action。</p>
+
+<ul>
+<li>操作发起时的 Action</li>
+<li>操作成功时的 Action</li>
+<li>操作失败时的 Action</li>
+</ul>
+
+<p>三种 Action 有两种不同的写法。</p>
+
+<pre><code class="language-javascript">
+// 写法一：名称相同，参数不同
+{ type: 'FETCH_POSTS' }
+{ type: 'FETCH_POSTS', status: 'error', error: 'Oops' }
+{ type: 'FETCH_POSTS', status: 'success', response: { ... } }
+
+// 写法二：名称不同
+{ type: 'FETCH_POSTS_REQUEST' }
+{ type: 'FETCH_POSTS_FAILURE', error: 'Oops' }
+{ type: 'FETCH_POSTS_SUCCESS', response: { ... } }
+
+</code></pre>
+
+<p>State 也要反应不同的操作状态。</p>
+
+<pre><code class="language-javascript">
+let state = {
+  // ... 
+  isFetching: true,//表示是否在抓取数据
+  didInvalidate: true,//表示数据是否过时
+  lastUpdated: 'xxxxxxx'//表示上一次更新时间
+};
+
+</code></pre>
+
+<p>异步操作思路：</p>
+
+<ul>
+<li>操作开始时，送出一个 Action，触发 State 更新为&rdquo;正在操作&rdquo;状态，View 重新渲染</li>
+<li>操作结束后，再送出一个 Action，触发 State 更新为&rdquo;操作结束&rdquo;状态，View 再一次重新渲染</li>
+</ul>
+
+<h2 id="redux-thunk-中间件">redux-thunk 中间件</h2>
+
+<p>Action Creator 解决异步操作结束后，系统自动无法送出第二个 Action 的问题。但由于 Action 是由 store.dispatch 方法发送的。而 store.dispatch 方法正常情况下，参数只能是对象，不能是函数。这时需要用到中间件 redux-thunk 改造 store.dispatch ，使得后者可以接受函数作为参数。</p>
+
+<h2 id="redux-promise-中间件">redux-promise 中间件</h2>
+
+<p>这个中间件使得 store.dispatch 方法可以接受 Promise 对象作为参数。</p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html">http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html</a></p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="/tags/%E5%89%8D%E7%AB%AF" role="button">前端 </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=/blog/2019-03/react-redux1-%E6%91%98%E8%A6%81/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>React-redux(1) 摘要</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=/blog/2019-03/react-redux3-%E6%91%98%E8%A6%81/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>React-redux(3) 摘要</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%90%8c%e6%ad%a5%e4%b8%8e%e5%bc%82%e6%ad%a5">
+												 同步与异步
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e4%b8%ad%e9%97%b4%e4%bb%b6-middleware">
+												 中间件（middleware）
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%bc%82%e6%ad%a5%e6%93%8d%e4%bd%9c">
+												 异步操作
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#redux-thunk-%e4%b8%ad%e9%97%b4%e4%bb%b6">
+												 redux-thunk 中间件
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#redux-promise-%e4%b8%ad%e9%97%b4%e4%bb%b6">
+												 redux-promise 中间件
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/oiar " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+      <a href="//linkedin.com/in/you" target="_blank" rel="noopener"><i class="fab fa-linkedin-in mr-3" aria-hidden="true"></i></a>
+    
+
+    
+      <a href="//facebook.com/you" target="_blank" rel="noopener"><i class="fab fa-facebook-f mr-3" aria-hidden="true"></i></a>
+    
+
+    
+    <a href="//google.com/you" target="_blank" rel="noopener"><i class="fab fa-google-plus-g mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//twitter.com/you" target="_blank" rel="noopener"><i class="fab fa-twitter mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//instagram.com/you" target="_blank" rel="noopener"><i class="fab fa-instagram mr-3" aria-hidden="true"></i></a>
+    
+
+    
+        <a href="//px500" target="_blank" rel="noopener"><i class="fab fa-500px mr-3" aria-hidden="true"></i></a>
+    
+
+
+    
+        <a href="mailto:snowoiar@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+  
+  <script src="/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="/js/vendors/katex/katex.min.js"> </script>
+  <script src="/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

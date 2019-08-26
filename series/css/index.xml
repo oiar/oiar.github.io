@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Css on Oiar</title>
+    <link>/series/css/</link>
+    <description>Recent content in Css on Oiar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Sat, 30 Mar 2019 10:27:49 +0800</lastBuildDate>
+    
+	<atom:link href="/series/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Css 玩转position</title>
+      <link>/blog/2019-03/css-%E7%8E%A9%E8%BD%ACposition/</link>
+      <pubDate>Sat, 30 Mar 2019 10:27:49 +0800</pubDate>
+      
+      <guid>/blog/2019-03/css-%E7%8E%A9%E8%BD%ACposition/</guid>
+      <description>定义和用法 position 属性规定元素的定位类型。 fixed实例 背景图片相对于浏览器窗口进行定位 &amp;lt;div class=&amp;quot;image_module&amp;quot; style=&amp;quot;background-image: url(https://dynamic.thoughtworks.com/landing_pages/parallax_image-441c058c0a407e96deddd32bd6a00649.jpeg);&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;full-width-image&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;vertical_center&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;module_title_style&amp;quot;&amp;gt; &amp;lt;h2 class=&amp;quot;module_title&amp;quot;&amp;gt;准备好加入我们了吗？&amp;lt;/h2&amp;gt; &amp;lt;el-button class=&amp;quot;el_button&amp;quot;&amp;gt;让我们开始吧&amp;lt;/el-button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; .image_module { background-size: cover; // 保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小</description>
+    </item>
+    
+    <item>
+      <title>Css 单位及页面适配</title>
+      <link>/blog/2019-03/css-%E5%8D%95%E4%BD%8D%E5%8F%8A%E9%A1%B5%E9%9D%A2%E9%80%82%E9%85%8D/</link>
+      <pubDate>Fri, 29 Mar 2019 11:56:09 +0800</pubDate>
+      
+      <guid>/blog/2019-03/css-%E5%8D%95%E4%BD%8D%E5%8F%8A%E9%A1%B5%E9%9D%A2%E9%80%82%E9%85%8D/</guid>
+      <description>px（绝对长度单位） 像素px是相对于显示器屏幕分辨率而言的。px只能用于固定尺寸。 em（相对长度单位） 浏览器的默认字体都是16px，那么1em=16px，以此类推计算12px=0.75em，10px=0.625em，2em=32px； 为了简化font-size的换算，我们在body中写入以下代码： body {font-size: 62.5%; } /* 公式16px*62.5%=10px */ em的值并不是固定的；em会继承父级元素的字体大小（参考</description>
+    </item>
+    
+  </channel>
+</rss>

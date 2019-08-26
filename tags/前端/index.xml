@@ -6,10 +6,109 @@
     <description>Recent content in 前端 on Oiar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 18 Aug 2018 20:14:59 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Mar 2019 10:27:49 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Css 玩转position</title>
+      <link>/blog/2019-03/css-%E7%8E%A9%E8%BD%ACposition/</link>
+      <pubDate>Sat, 30 Mar 2019 10:27:49 +0800</pubDate>
+      
+      <guid>/blog/2019-03/css-%E7%8E%A9%E8%BD%ACposition/</guid>
+      <description>定义和用法 position 属性规定元素的定位类型。 fixed实例 背景图片相对于浏览器窗口进行定位 &amp;lt;div class=&amp;quot;image_module&amp;quot; style=&amp;quot;background-image: url(https://dynamic.thoughtworks.com/landing_pages/parallax_image-441c058c0a407e96deddd32bd6a00649.jpeg);&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;full-width-image&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;vertical_center&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;module_title_style&amp;quot;&amp;gt; &amp;lt;h2 class=&amp;quot;module_title&amp;quot;&amp;gt;准备好加入我们了吗？&amp;lt;/h2&amp;gt; &amp;lt;el-button class=&amp;quot;el_button&amp;quot;&amp;gt;让我们开始吧&amp;lt;/el-button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; .image_module { background-size: cover; // 保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小</description>
+    </item>
+    
+    <item>
+      <title>Css 单位及页面适配</title>
+      <link>/blog/2019-03/css-%E5%8D%95%E4%BD%8D%E5%8F%8A%E9%A1%B5%E9%9D%A2%E9%80%82%E9%85%8D/</link>
+      <pubDate>Fri, 29 Mar 2019 11:56:09 +0800</pubDate>
+      
+      <guid>/blog/2019-03/css-%E5%8D%95%E4%BD%8D%E5%8F%8A%E9%A1%B5%E9%9D%A2%E9%80%82%E9%85%8D/</guid>
+      <description>px（绝对长度单位） 像素px是相对于显示器屏幕分辨率而言的。px只能用于固定尺寸。 em（相对长度单位） 浏览器的默认字体都是16px，那么1em=16px，以此类推计算12px=0.75em，10px=0.625em，2em=32px； 为了简化font-size的换算，我们在body中写入以下代码： body {font-size: 62.5%; } /* 公式16px*62.5%=10px */ em的值并不是固定的；em会继承父级元素的字体大小（参考</description>
+    </item>
+    
+    <item>
+      <title>Vue项目-背景图片</title>
+      <link>/blog/2019-03/vue%E9%A1%B9%E7%9B%AE-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Fri, 29 Mar 2019 11:04:08 +0800</pubDate>
+      
+      <guid>/blog/2019-03/vue%E9%A1%B9%E7%9B%AE-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</guid>
+      <description>背景图片与底色设置 .wrap { background: url(/) no-repeat center; //背景图不重复，并在&amp;lt;div&amp;gt;中居中 } &amp;lt;div class=&amp;quot;wrap&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 代码风格</title>
+      <link>/blog/2019-03/javascript-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/</link>
+      <pubDate>Wed, 27 Mar 2019 17:12:24 +0800</pubDate>
+      
+      <guid>/blog/2019-03/javascript-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid>
+      <description>解构赋值 function bar() { return {a: 1, b: 2, c: 3}; } let { a, c } = bar(); console.log(a); // 1 console.log(c); // 3 console.log(b); // undefined function baz() { return { x: &#39;car&#39;, y: &#39;London&#39;, z: { name: &#39;John&#39;, age: 21} }; } let { x: vehicle, y: city, z: { name: driver } } = baz(); console.log( `I&#39;m going to ${city} with ${driver} in their ${vehicle}.` ); // I&#39;m going to London with John in their car. 箭头函数 箭头函数一个最重要的用途之一就是应用在数组的相关函数中，像.map，.forEach，.sort等等。 let arr = [ 5, 6, 7, 8, &#39;a&#39; ]; let b = arr.map( item =&amp;gt; item + 3 ); console.log(b); // [ 8, 9, 10, 11, &#39;a3&#39; ] for&amp;hellip;of 循环 let a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39; ]; // ES6 for ( var val of a ) { console.log( val ); } // &amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot; &amp;quot;d&amp;quot; // pre-ES6 for</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 值类型和引用类型</title>
+      <link>/blog/2019-03/javascript-%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 27 Mar 2019 11:26:38 +0800</pubDate>
+      
+      <guid>/blog/2019-03/javascript-%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</guid>
+      <description>值类型 值类型（基本类型）：字符串（String）、数值（Number）、布尔值（Boolean）、Undefined、Null （这5种基本数据类型是按值访问的，因为可以操作保存在变量中的实际的值 引用类型 引用类型：对象（Object）、数组（Array）、函数（Function） 两者区别 （1）值类型 占用空间固定，保存在栈中（栈：当一个方法执行时，每个方法都会建立自己的内存栈，随着方法执行结束后，内存</description>
+    </item>
+    
+    <item>
+      <title>javaScript 原始类型</title>
+      <link>/blog/2019-03/javascript-%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Tue, 26 Mar 2019 22:23:30 +0800</pubDate>
+      
+      <guid>/blog/2019-03/javascript-%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javaScript 执行机制</title>
+      <link>/blog/2019-03/javascript-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Tue, 26 Mar 2019 19:54:38 +0800</pubDate>
+      
+      <guid>/blog/2019-03/javascript-%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</guid>
+      <description>关于JavaScript JavaScript 是一门单线程语言 JavaScript事件循环 为解决任务耗时过长，将任务分为两类： 同步任务 异步任务 js引擎存在monitoring process进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去Event Queue那里检查是否有等待被调用的函数。 let data = []; $.ajax({ url:www.javascript.com, data:data, success:() =&amp;gt; { console.log(&#39;发送成功!&#39;); } }) console.log(&#39;代码执行结束&#39;); 上面是一段</description>
+    </item>
+    
+    <item>
+      <title>Vuex 摘要</title>
+      <link>/blog/2019-03/vuex-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Fri, 15 Mar 2019 16:23:38 +0800</pubDate>
+      
+      <guid>/blog/2019-03/vuex-%E6%91%98%E8%A6%81/</guid>
+      <description>The difference of Redux and Vuex React is different from Vue in the way it processes updates: React renders a virtual DOM then calculates optimal DOM operations to make the currently rendered DOM match the new Virtual Dom. But it has no way of knowing whether a particular component needs to re-render or not based on the new data. Vue instances keep track of which bits of data they depend on to render. These instances automatically register what needs to re-render when the data changes. Vuex Mutations The only way to change state in a Vuex store is by committing a mutation. But one thing to remember is that mutations are always synchronous to ensure that the state isn’t dependent on the timing and order of unpredictable events. Actions Actions are similar to mutations and work like Redux actions. Actions can contain arbitrary asynchronous operations. State Vuex uses a single state tree. One thing to remember is that the state can only be changed by committing mutations. Benefits Mutations are easier to work with then Reducers Asynchronous actions are much more organized in Vuex. There is no need to write _ON_LOAD, _SUCCESS or _FAIL middle term</description>
+    </item>
+    
+    <item>
+      <title>React-redux(3) 摘要</title>
+      <link>/blog/2019-03/react-redux3-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Thu, 14 Mar 2019 21:30:12 +0800</pubDate>
+      
+      <guid>/blog/2019-03/react-redux3-%E6%91%98%E8%A6%81/</guid>
+      <description>React-Redux 将所有组件分成两大类：UI 组件（presentational component）和容器组件（container component）。 UI组件 只负责 UI 的呈现，不带有任何业务逻辑 没有状态（即不使用this.state这个变量） 所有数据都由参数（this.props）提供 不使用任何 Redux 的 API 又称为&amp;rdquo;纯组件&amp;rdquo;，即它纯函数一样，纯粹由参数决定它的值。 容器组件 负责管理数据和业务逻辑，不负</description>
+    </item>
+    
+    <item>
+      <title>React-redux(2) 摘要</title>
+      <link>/blog/2019-03/react-redux2-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Thu, 14 Mar 2019 21:20:45 +0800</pubDate>
+      
+      <guid>/blog/2019-03/react-redux2-%E6%91%98%E8%A6%81/</guid>
+      <description>同步与异步 Action 发出以后，Reducer 立即算出 State，叫做同步；Action 发出以后，过一段时间再执行 Reducer，就是异步。 怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。 中间件（middleware） applyMiddlewares() 方法是 Redux 的原生方法，作用是将所有中间件组成一个数组，依次执行。下面是它的源码。 export default function applyMiddleware(...middlewares) { return (createStore) =&amp;gt; (reducer, preloadedState, enhancer) =&amp;gt; { var store = createStore(reducer, preloadedState, enhancer); var dispatch = store.dispatch; var chain = []; var middlewareAPI = { getState: store.getState, dispatch: (action)</description>
+    </item>
+    
+    <item>
+      <title>React-redux(1) 摘要</title>
+      <link>/blog/2019-03/react-redux1-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Thu, 14 Mar 2019 21:02:38 +0800</pubDate>
+      
+      <guid>/blog/2019-03/react-redux1-%E6%91%98%E8%A6%81/</guid>
+      <description>首先 用户发出 Action。 store.dispatch(action); 然后 Store 自动调用 Reducer，并且传入两个参数：当前 State 和收到的 Action。 Reducer 会返回新的 State 。 let nextState = todoApp(previousState, action); 调用 State 一旦有变化，Store 就会调用监听函数。 // 设置监听函数 store.subscribe(listener); 渲染 listener可以通过store.getState()得到当前状态。如果使用的是 React，这时可以触发重新渲染 View。 function listerner() { let newState = store.getState(); component.setState(newState); }</description>
+    </item>
     
     <item>
       <title>Blog养成记(14) 让同页滚动更平滑</title>

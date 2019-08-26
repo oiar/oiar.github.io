@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Oiar</title>
+    <link>/categories/vue/</link>
+    <description>Recent content in Vue on Oiar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Fri, 29 Mar 2019 11:04:08 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue项目-背景图片</title>
+      <link>/blog/2019-03/vue%E9%A1%B9%E7%9B%AE-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Fri, 29 Mar 2019 11:04:08 +0800</pubDate>
+      
+      <guid>/blog/2019-03/vue%E9%A1%B9%E7%9B%AE-%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/</guid>
+      <description>背景图片与底色设置 .wrap { background: url(/) no-repeat center; //背景图不重复，并在&amp;lt;div&amp;gt;中居中 } &amp;lt;div class=&amp;quot;wrap&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Vuex 摘要</title>
+      <link>/blog/2019-03/vuex-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Fri, 15 Mar 2019 16:23:38 +0800</pubDate>
+      
+      <guid>/blog/2019-03/vuex-%E6%91%98%E8%A6%81/</guid>
+      <description>The difference of Redux and Vuex React is different from Vue in the way it processes updates: React renders a virtual DOM then calculates optimal DOM operations to make the currently rendered DOM match the new Virtual Dom. But it has no way of knowing whether a particular component needs to re-render or not based on the new data. Vue instances keep track of which bits of data they depend on to render. These instances automatically register what needs to re-render when the data changes. Vuex Mutations The only way to change state in a Vuex store is by committing a mutation. But one thing to remember is that mutations are always synchronous to ensure that the state isn’t dependent on the timing and order of unpredictable events. Actions Actions are similar to mutations and work like Redux actions. Actions can contain arbitrary asynchronous operations. State Vuex uses a single state tree. One thing to remember is that the state can only be changed by committing mutations. Benefits Mutations are easier to work with then Reducers Asynchronous actions are much more organized in Vuex. There is no need to write _ON_LOAD, _SUCCESS or _FAIL middle term</description>
+    </item>
+    
+  </channel>
+</rss>

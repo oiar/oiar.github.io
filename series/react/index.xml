@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Oiar</title>
+    <link>/series/react/</link>
+    <description>Recent content in React on Oiar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Thu, 14 Mar 2019 21:30:12 +0800</lastBuildDate>
+    
+	<atom:link href="/series/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React-redux(3) 摘要</title>
+      <link>/blog/2019-03/react-redux3-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Thu, 14 Mar 2019 21:30:12 +0800</pubDate>
+      
+      <guid>/blog/2019-03/react-redux3-%E6%91%98%E8%A6%81/</guid>
+      <description>React-Redux 将所有组件分成两大类：UI 组件（presentational component）和容器组件（container component）。 UI组件 只负责 UI 的呈现，不带有任何业务逻辑 没有状态（即不使用this.state这个变量） 所有数据都由参数（this.props）提供 不使用任何 Redux 的 API 又称为&amp;rdquo;纯组件&amp;rdquo;，即它纯函数一样，纯粹由参数决定它的值。 容器组件 负责管理数据和业务逻辑，不负</description>
+    </item>
+    
+    <item>
+      <title>React-redux(2) 摘要</title>
+      <link>/blog/2019-03/react-redux2-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Thu, 14 Mar 2019 21:20:45 +0800</pubDate>
+      
+      <guid>/blog/2019-03/react-redux2-%E6%91%98%E8%A6%81/</guid>
+      <description>同步与异步 Action 发出以后，Reducer 立即算出 State，叫做同步；Action 发出以后，过一段时间再执行 Reducer，就是异步。 怎么才能 Reducer 在异步操作结束后自动执行呢？这就要用到新的工具：中间件（middleware）。 中间件（middleware） applyMiddlewares() 方法是 Redux 的原生方法，作用是将所有中间件组成一个数组，依次执行。下面是它的源码。 export default function applyMiddleware(...middlewares) { return (createStore) =&amp;gt; (reducer, preloadedState, enhancer) =&amp;gt; { var store = createStore(reducer, preloadedState, enhancer); var dispatch = store.dispatch; var chain = []; var middlewareAPI = { getState: store.getState, dispatch: (action)</description>
+    </item>
+    
+    <item>
+      <title>React-redux(1) 摘要</title>
+      <link>/blog/2019-03/react-redux1-%E6%91%98%E8%A6%81/</link>
+      <pubDate>Thu, 14 Mar 2019 21:02:38 +0800</pubDate>
+      
+      <guid>/blog/2019-03/react-redux1-%E6%91%98%E8%A6%81/</guid>
+      <description>首先 用户发出 Action。 store.dispatch(action); 然后 Store 自动调用 Reducer，并且传入两个参数：当前 State 和收到的 Action。 Reducer 会返回新的 State 。 let nextState = todoApp(previousState, action); 调用 State 一旦有变化，Store 就会调用监听函数。 // 设置监听函数 store.subscribe(listener); 渲染 listener可以通过store.getState()得到当前状态。如果使用的是 React，这时可以触发重新渲染 View。 function listerner() { let newState = store.getState(); component.setState(newState); }</description>
+    </item>
+    
+  </channel>
+</rss>
